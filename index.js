@@ -25,6 +25,7 @@ mongoose.connect(process.env.DB_CONNECT,
 //Middleware
 app.use(express.json());
 
+
 //Route middlewares
 app.use('/api/user', authRoute);
 app.use('/api/posts', postRoute);

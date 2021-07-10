@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const User = require('../model/User');
 const { registerValidation, loginValidation } = require('../validation');
 
@@ -54,10 +55,18 @@ router.post('/login', async (req, res) => {
     if(!validPass) return res.status(400).send('invalid password');
 
     //create and assign a token
-    const token = jwt.sign( { _id: user._id }, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(`copy this token to header: ${token}`);
-
-    res.send('Success Logged in!')
+    const token = jwt.sign( 
+        { _id: user._id },
+        process.env.TOKEN_SECRET,
+        { expiresIn: '1h' }
+    );
+    res.cookie('jwt', token, { httponly: true, maxAge: 3600 });
+    res.status(200).send(`copy this token to header: ${token}`);
+    
 });
+
+router.get('/coba', async (req, res) => {
+    console.log('kinoy');
+})
 
 module.exports = router;

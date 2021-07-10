@@ -5,7 +5,27 @@
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
+    "jwt-redis": "^6.0.0",
     "midtrans-client": "^1.2.4",
     "mongoose": "^5.13.2"
-  }
+  },
+  "name": "easyzakat_login_jwt_postman",
+  "description": "website pembayaran zakat dg nodejs, mongodb, midtrans payment gateway, dan postman",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cafe-centerpoint/easy-zakat-postman.git"
+  },
+  "author": "aldi, aziz, fiki, jaya, kiki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cafe-centerpoint/easy-zakat-postman/issues"
+  },
+  "homepage": "https://github.com/cafe-centerpoint/easy-zakat-postman#readme"
 }
